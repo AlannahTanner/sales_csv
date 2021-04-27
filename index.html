@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Console Sales Per Year</title>
+        <script src='https://d3js.org/d3.v4.min.js'></script>
+        <!-- <script src="index.js"></script> -->
+    </head>
+    <body>
+        <h2>Nintendo Consoles Sales Per Year</h2>
+
+        <script>
+            d3.select('h2').style('font-weight', 'bold');
+            d3.select('h2').style('font-size', '32px');
+            d3.select('h2').style('text-align', 'center');
+
+            d3.csv("data/Sales.csv", function(data) {
+                console.log(data);
+            });
+        </script>
+
+    </body>
+</html>
