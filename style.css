@@ -1,0 +1,22 @@
+text {
+    font-size: 16px;
+    font-family: Open Sans, sans-serif;
+  }
+text.title {
+    font-size: 42px;
+    font-weight: bold;
+  }
+text.label {
+      font-weight: 600;
+    }
+text.yearText {
+      font-size: 92px;
+      font-weight: 700;
+    }
+.tick line {
+      shape-rendering: CrispEdges;
+      stroke: #dddddd;
+    }
+path.domain {
+      display: none;
+    }

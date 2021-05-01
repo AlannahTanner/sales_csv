@@ -1,61 +1,11 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Console Sales Per Year</title>
-        <script src='https://d3js.org/d3.v5.min.js'></script>
-        <!-- <script src="index.js"></script> -->
-    </head>
-    <body>
-        <h2>Nintendo Consoles Sales Per Year</h2>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-        <script>
-            d3.select('h2').style('font-weight', 'bold');
-            d3.select('h2').style('font-size', '32px');
-            d3.select('h2').style('text-align', 'center');
+<body onload="canvas()">
 
-            // d3.csv("https://raw.githubusercontent.com/AlannahTanner/sales_csv/fbfa2835f37cef7cfb67d95b69e079ff28c7a5f3/data/Sales.csv", function(data) {
-            //     console.log(data[0]);
-            // });
-
-            var svg = d3.select("body").append("svg")
-                .attr("width", 960)
-                .attr("height", 600);
-            
-            var top = 10;
-            var width = 960;
-            var height = 600;
-
-            const margin = {
-                top: 50,
-                right:5,
-                bottom: 10,
-                left: 10
-            };
-
-            var year = 2001;
-
-            var barPadding = (height-(margin.top + margin.right + margin.bottom + margin.left))/(top*5);
-
-            d3.csv("https://raw.githubusercontent.com/AlannahTanner/sales_csv/fbfa2835f37cef7cfb67d95b69e079ff28c7a5f3/data/Sales.csv").then(function(data) {
-                // console.log(data[0]);
-                data.forEach(e => {
-                    e.value = +e.value,
-                    e.lastValue = +e.lastValue,
-                    e.value = isNaN(e.value) ? 0 : e.value,
-                    e.year = +e.year,
-                    e.colour = d3.hsl(Math.random()*360,0.5,0.5)
-                });
-                // console.log(data);
-                var yearA = data.filter(e => e.year == year && !isNaN(e.value))
-                    .sort((a,b) => b.value - a.value)
-                    .slice(0, top);
-
-                yearA.forEach((e,f) => e.rank = f);
-                console.log("Year Slice", yearA);
-            });
-
-
-        </script>
-
-    </body>
-</html>
+</body>
