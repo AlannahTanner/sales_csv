@@ -4,7 +4,7 @@ function canvas() {
         .attr("width", 960)
         .attr("height", 600);
 
-    var tickDuration = 2000;
+    var tickDuration = 2500;
 
     var top = 10;
     var height = 600;
